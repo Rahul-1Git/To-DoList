@@ -1,0 +1,128 @@
+
+body {
+  font-family: 'Comic Sans MS', 'Comic Neue', sans-serif; 
+  background-color: #fdf5e6; 
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.app-container {
+  margin: 20px auto;
+  background-color: #fffbcc; 
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #d35400;
+  text-shadow: 2px 2px #f39c12;
+}
+
+
+.add-note-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.add-note-form input {
+  padding: 10px;
+  border: 2px solid #8e44ad;
+  border-radius: 10px;
+  font-size: 1rem;
+  flex: 1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-note-form input::placeholder {
+  color: #8e44ad;
+}
+
+.add-note-form button {
+  width: 50px;
+  height: 50px;
+  background-color: #27ae60; 
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.add-note-form button:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1);
+}
+
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+.note {
+  background-color: #ecf0f1; 
+  border: 3px dashed #e74c3c;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.note:hover {
+  background-color: #f8f9f9;
+  transform: translateY(-5px);
+}
+
+.note h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #3498db; 
+  text-shadow: 1px 1px #2980b9;
+}
+
+.note p {
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.note button {
+  background-color: #e74c3c; 
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.note button:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
