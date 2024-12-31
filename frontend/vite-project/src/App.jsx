@@ -7,10 +7,13 @@ import "./App.css";
 function App() {
   const [notes, setNotes] = useState([]);
 
+   // Backend API URL from .env
+  const API_URL = import.meta.env.VITE_API_URL;
+
   // Fetch Notes from Backend
   async function getNotes() {
     try {
-      const response = await axios.get("http://localhost:3000/notes");
+      const response = await axios.get(`${API_URL}/notes`);
       setNotes(response.data);
     } catch (error) {
       console.error("Error fetching notes:", error);
@@ -20,7 +23,7 @@ function App() {
   // Add a Note
   async function addNote(note) {
     try {
-      await axios.post("http://localhost:3000/add", note);
+      await axios.post(`${API_URL}/add`, note);
       getNotes(); // Refresh notes after adding
     } catch (error) {
       console.error("Error adding note:", error);
@@ -30,7 +33,7 @@ function App() {
   // Delete a Note
   async function deleteNote(id) {
     try {
-      await axios.delete(`http://localhost:3000/notes/${id}`);
+      await axios.delete(`${API_URL}/notes/${id}`);
       getNotes(); // Refresh notes after deleting
     } catch (error) {
       console.error("Error deleting note:", error);
